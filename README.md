@@ -1,2 +1,3 @@
-# nnhntr.github.io
-My Beautiful Website
+# Natalie Hunter Art
+
+A website showcasing Natalie Hunter's fine art.
