@@ -4,7 +4,7 @@ A website showcasing Natalie Hunter's art.
 
 ## Licence
 
-I hope you enjoy viewing my art on my website or in this README.md. Please do not copy art from this site. Natalie retains exclusive copyright. The content, in particular the images and text, are not free to use and distribute on your own websites. We intentionally did not add a licence. This is what that omition means https://choosealicense.com/no-permission/.
+I hope you enjoy viewing my art on my website or in this README.md. Please do not copy art from this site. Natalie Hunter retains exclusive copyright. The content, in particular the images and text, are not free to use and distribute on your own websites. We intentionally did not add a licence. This is what that omition means https://choosealicense.com/no-permission/.
 
 ## Sample Art
 
