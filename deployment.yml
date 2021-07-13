@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nnhntr
+---
+# Note the document index of the deployment is hard-coded in deploy.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nnhntr
+  namespace: nnhntr
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nnhntr
+  template:
+    metadata:
+      labels:
+        app: nnhntr
+    spec:
+      imagePullSecrets:
+        - name: registry-crhntr
+      containers:
+        - name: nnhntr
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
+            - name: GITHUB_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: com-crhntr
+                  key: GITHUB_AUTH_TOKEN
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nnhntr
+  namespace: crhntr
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: nnhntr
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nnhntr
+  namespace: nnhntr
+spec:
+  tls:
+    - hosts:
+        - nataliehunterart.com
+  rules:
+    - host: nataliehunterart.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nnhntr
+                port:
+                  number: 8080
