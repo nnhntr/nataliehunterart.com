@@ -5,7 +5,7 @@ set -ex
 go test ./...
 
 export VERSION
-VERSION="0.1.0"
+VERSION="$(doctl registry repository list-tags nnhntr --output json | jq -r .[0].tag | awk '{split($0,a,"."); print a[3] "."  a[2] + 1 "." a[1]}')"
 
 export TAG
 TAG="registry.digitalocean.com/crhntr/nnhntr:${VERSION}"
