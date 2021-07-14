@@ -20,7 +20,7 @@ spec:
         app: nnhntr
     spec:
       imagePullSecrets:
-        - name: registry-crhntr
+        - name: crhntr
       containers:
         - name: nnhntr
           imagePullPolicy: Always
