@@ -36,5 +36,6 @@ func main() {
 		}
 		http.ServeContent(res, req, "index.html", start, bytes.NewReader(indexHTML))
 	})
+	log.Println("starting server...")
 	log.Fatalln(http.ListenAndServe(":"+os.Getenv("PORT"), mux))
 }

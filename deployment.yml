@@ -10,7 +10,7 @@ metadata:
   name: nnhntr
   namespace: nnhntr
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nnhntr
@@ -29,17 +29,12 @@ spec:
           env:
             - name: PORT
               value: "8080"
-            - name: GITHUB_AUTH_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: com-crhntr
-                  key: GITHUB_AUTH_TOKEN
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: nnhntr
-  namespace: crhntr
+  namespace: nnhntr
 spec:
   type: ClusterIP
   ports:
@@ -51,7 +46,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nnhntr
+  name: ingress
   namespace: nnhntr
 spec:
   tls:
