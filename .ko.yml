@@ -1,0 +1,5 @@
+builds:
+  - id: nnhntr
+    main: ./
+    ldflags:
+      - -s -w
