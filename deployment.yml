@@ -30,6 +30,13 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
+          resources:
+            limits:
+              cpu: 500m
+              memory: 200mb
+            requests:
+              cpu: 100m
+              memory: 20mb
       imagePullSecrets:
         - name: github-registry
       restartPolicy: Always
