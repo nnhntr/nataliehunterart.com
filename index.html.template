@@ -1,5 +1,6 @@
+{{- /*gotype: github.com/nnhntr/nataliehunterart.com.PageData*/ -}}
 <!DOCTYPE html>
-<html>
+<html lang="us-en">
   <title>Natalie Hunter Art - Soul Companions</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,7 +83,7 @@
     <a href="http://crhntr.com" style="color:#555" target="_top">Website by @crhntr</a>
   </div>
 
-  <p>© 2020 Natalie Hunter</p>
+  <p>© 2018-{{.Year}} Natalie Hunter</p>
 
   <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
   <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
